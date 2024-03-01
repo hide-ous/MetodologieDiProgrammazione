@@ -1,7 +1,7 @@
-package lecture2;
+package lecture3;
 
 /*
-* Convert Fahrenheight temperature to Celsius
+* Convert Fahrenheit temperature to Celsius
 */
 public class TempConvert {
 
@@ -12,7 +12,7 @@ public class TempConvert {
 		double cel; // initalize
 
 		cel = (FAHR - 32) * 5.0 / 9.0;
-		System.out.println("The temp (in C) =" + cel);
+		System.out.println("The temp (in C) = " + cel);
 
 	}
 }

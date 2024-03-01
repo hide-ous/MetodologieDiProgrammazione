@@ -1,7 +1,7 @@
 /**
  * 
  */
-package lecture2;
+package lecture1;
 
 /**
  * 
