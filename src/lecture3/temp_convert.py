@@ -1,5 +1,5 @@
 """
-Converts Fahrenheight temperature to Celsius
+Converts Fahrenheit temperature to Celsius
 """
 FAHR = 40 # A constant in Python 
 
