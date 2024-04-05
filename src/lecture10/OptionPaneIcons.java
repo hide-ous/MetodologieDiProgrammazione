@@ -6,14 +6,27 @@ import javax.swing.JOptionPane;
 public class OptionPaneIcons {
 
 	public static void main(String[] args) {
-//		JOptionPane.showMessageDialog(null, "Hello, World!");
-		System.out.println(System.getProperty("user.dir"));
-		JOptionPane.showMessageDialog(
-				 null, 
-				 "Hello, World!",
-				 "Message",
-				 JOptionPane.INFORMATION_MESSAGE,
-				 new ImageIcon("resources/ab.gif"));
+		
+		// v1: default icon
+		JOptionPane.showMessageDialog(null, "Hello, World!");
+		
+		
+//		// v2: with image
+//		JOptionPane.showMessageDialog(
+//				 null, 
+//				 "Hello, World!",
+//				 "Message",
+//				 JOptionPane.INFORMATION_MESSAGE,
+//				 new ImageIcon("resources/ab.gif"));
+//		
+//		// v3: with custom graphics
+//		JOptionPane.showMessageDialog(
+//				 null, 
+//				 "Hello, World!",
+//				 "Message",
+//				 JOptionPane.INFORMATION_MESSAGE,
+//				 new BlackMoonIcon(100));
+//		
 	}
 
 }
