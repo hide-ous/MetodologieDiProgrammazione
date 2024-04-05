@@ -9,7 +9,7 @@ public class OptionPaneIcons {
 		
 		// v1: default icon
 		JOptionPane.showMessageDialog(null, "Hello, World!");
-		
+//		
 		
 //		// v2: with image
 //		JOptionPane.showMessageDialog(
@@ -25,8 +25,15 @@ public class OptionPaneIcons {
 //				 "Hello, World!",
 //				 "Message",
 //				 JOptionPane.INFORMATION_MESSAGE,
+//				 new MarsIcon(100));
+		
+//		// v4: with custom graphics -- now with interfaces!
+//		JOptionPane.showMessageDialog(
+//				 null, 
+//				 "Hello, World!",
+//				 "Message",
+//				 JOptionPane.INFORMATION_MESSAGE,
 //				 new BlackMoonIcon(100));
-//		
 	}
 
 }
