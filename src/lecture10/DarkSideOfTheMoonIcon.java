@@ -5,15 +5,15 @@ import java.awt.geom.*;
 import javax.swing.*;
 
 /**
-   An icon that has the shape of the planet Mars.
+   An icon that has the shape of the dark side of the moon.
 */
-public class BlackMoonIcon implements Icon
+public class DarkSideOfTheMoonIcon implements Icon
 {
    /**
       Constructs a Mars icon of a given size.
       @param aSize the size of the icon
    */
-   public BlackMoonIcon(int aSize)
+   public DarkSideOfTheMoonIcon(int aSize)
    {
       size = aSize;
    }
