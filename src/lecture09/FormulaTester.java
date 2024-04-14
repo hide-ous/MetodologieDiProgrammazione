@@ -1,4 +1,4 @@
-package lecture9;
+package lecture09;
 
 public class FormulaTester {
 	

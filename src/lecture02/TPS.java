@@ -1,4 +1,4 @@
-package lecture2;
+package lecture02;
 
 public class TPS {
 

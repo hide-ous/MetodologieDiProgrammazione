@@ -1,4 +1,4 @@
-package lecture3;
+package lecture03;
 
 /*
 * Convert Fahrenheit temperature to Celsius

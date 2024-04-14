@@ -1,4 +1,4 @@
-package lecture6;
+package lecture06;
 
 public class Cat {
 	String name;
