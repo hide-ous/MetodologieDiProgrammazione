@@ -6,8 +6,10 @@ public class CircularSeries implements Series {
 	
 	@Override
 	public int next() {
-		
-		return pattern[k++ % pattern.length];
+		int returnValue= pattern[k];
+		k++;
+		k =  k % pattern.length;
+		return returnValue;
 	}
 
 	public static void main(String[] args) {
