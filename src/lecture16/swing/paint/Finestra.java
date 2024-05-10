@@ -1,4 +1,4 @@
-package swing.paint;
+package lecture16.swing.paint;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;

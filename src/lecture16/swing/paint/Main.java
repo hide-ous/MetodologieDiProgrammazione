@@ -1,4 +1,4 @@
-package swing.paint;
+package lecture16.swing.paint;
 
 
 public class Main {

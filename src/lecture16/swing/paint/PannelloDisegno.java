@@ -1,4 +1,4 @@
-package swing.paint;
+package lecture16.swing.paint;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
