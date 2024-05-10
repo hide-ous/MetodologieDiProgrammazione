@@ -1,4 +1,4 @@
-package swing.JRA.src.it.uniroma1.mdp.jra.tutorial;
+package swing.paint;
 
 
 public class Main {

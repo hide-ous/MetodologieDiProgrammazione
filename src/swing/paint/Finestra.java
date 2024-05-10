@@ -1,4 +1,4 @@
-package swing.JRA.src.it.uniroma1.mdp.jra.tutorial;
+package swing.paint;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
