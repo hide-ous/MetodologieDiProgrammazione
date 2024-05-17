@@ -8,7 +8,11 @@ import java.util.ArrayList;
 
 public class SocialMediaDiscussionApp extends JFrame {
 
-    private JTextArea discussionTextArea;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6421785127080761374L;
+	private JTextArea discussionTextArea;
     private JTextField messageTextField;
     private JButton sendButton;
 

@@ -11,7 +11,11 @@ import java.util.Random;
 
 public class ObservableSocialMediaDiscussionApp extends JFrame {
 
-    private JTextArea discussionTextArea;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1539391570655090303L;
+	private JTextArea discussionTextArea;
     private JTextField messageTextField;
     private JButton sendButton;
 
