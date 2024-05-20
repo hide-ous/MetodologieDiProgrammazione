@@ -6,25 +6,36 @@ import java.util.function.*;
 import java.util.regex.*;
 import java.util.Map.Entry;
 
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.stream.*;
+import java.util.Map.Entry;
+
 public class ParallelNLPExample {
 
     private static final List<String> STOPWORDS = Arrays.asList(
-        "a", "an", "the", "and", "or", "but", "is", "are", "was", "were", "in", "on", "at", "to", "of"
+        "a", "an", "the", "and", "or", "but", "is", "are", "was", "were", "in", "on", "at", "to", "of", "this", "that"
     );
 
     public static void main(String[] args) {
-        String text = "The quick brown fox jumps over the lazy dog. The dog was not amused.";
+        Path filePath = Paths.get("input.txt");
 
-        // Tokenize, filter stopwords, and count word frequency using parallel streams
-        Map<String, Long> wordCounts = Arrays.stream(text.toLowerCase().split("\\W+"))
-            .parallel()  // Enable parallel processing
-            .filter(word -> !STOPWORDS.contains(word))
-            .collect(Collectors.groupingByConcurrent(Function.identity(), Collectors.counting()));
+        try (Stream<String> lines = Files.lines(filePath).parallel()) {
+            Map<String, Long> wordCounts = lines
+                .flatMap(line -> Arrays.stream(line.toLowerCase().split("\\W+")))
+                .filter(word -> !STOPWORDS.contains(word))
+                .collect(Collectors.groupingByConcurrent(Function.identity(), Collectors.counting()));
 
-        // Print the word counts, sorted in descending order by frequency
-        wordCounts.entrySet().stream()
-            .parallel()  // Enable parallel processing for sorting and printing
-            .sorted(Entry.comparingByValue(Comparator.reverseOrder()))
-            .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+            // Print the word counts, sorted in descending order by frequency
+            wordCounts.entrySet().stream()
+                .parallel()
+                .sorted(Entry.comparingByValue(Comparator.reverseOrder()))
+                .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
