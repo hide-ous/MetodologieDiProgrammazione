@@ -21,17 +21,17 @@ public class ParallelNLPExample {
     );
 
     public static void main(String[] args) {
-        Path filePath = Paths.get("input.txt");
+        Path filePath = Paths.get("input.txt"); // save from e.g., https://www.gutenberg.org/cache/epub/1513/pg1513.txt
 
         try (Stream<String> lines = Files.lines(filePath).parallel()) {
             Map<String, Long> wordCounts = lines
+                .parallel()
                 .flatMap(line -> Arrays.stream(line.toLowerCase().split("\\W+")))
                 .filter(word -> !STOPWORDS.contains(word))
                 .collect(Collectors.groupingByConcurrent(Function.identity(), Collectors.counting()));
 
             // Print the word counts, sorted in descending order by frequency
             wordCounts.entrySet().stream()
-                .parallel()
                 .sorted(Entry.comparingByValue(Comparator.reverseOrder()))
                 .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
         } catch (IOException e) {
