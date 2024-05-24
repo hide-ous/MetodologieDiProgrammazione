@@ -25,11 +25,10 @@ public class ParallelNLPFromWebPage {
 
         try {
             URL url = new URL(urlString);
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-                 Stream<String> lines = reader.lines().parallel()) {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()))) {
                 
-                Map<String, Long> wordCounts = lines
-                    .parallel()
+                Map<String, Long> wordCounts = reader.lines()
+//                    .parallel()
                     .flatMap(line -> Arrays.stream(line.toLowerCase().split("\\W+")))
                     .filter(word -> !STOPWORDS.contains(word))
                     .collect(Collectors.groupingByConcurrent(Function.identity(), Collectors.counting()));

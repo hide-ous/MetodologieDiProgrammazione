@@ -25,7 +25,6 @@ public class ParallelNLPExample {
 
         try (Stream<String> lines = Files.lines(filePath).parallel()) {
             Map<String, Long> wordCounts = lines
-                .parallel()
                 .flatMap(line -> Arrays.stream(line.toLowerCase().split("\\W+")))
                 .filter(word -> !STOPWORDS.contains(word))
                 .collect(Collectors.groupingByConcurrent(Function.identity(), Collectors.counting()));
